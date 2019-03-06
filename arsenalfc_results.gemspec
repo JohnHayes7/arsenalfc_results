@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'John Hayes'"]
   spec.email         = ["'johnnyhayes7@gmail.com'"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{A gem that gives you the results of Arsenal FC by season or competition.}
+  spec.description   = %q{A gem that will allow you to seach results by season, competition and/or opponent}
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 
@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
     spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
     spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
+    spec.metadata["source_code_uri"] = "https://github.com/JohnHayes7/arsenalfc_results"
     spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
