@@ -20,7 +20,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To use this app, you will be first asked to select a season for which you want the results.  
+
+Your second step will be enter or select the competition you seek for results.
+
+You will then be asked to choose an opponent if you seek results against a particular opponent. You will also be able to select "all" to see all the results of that competition.
 
 ## Development
 
