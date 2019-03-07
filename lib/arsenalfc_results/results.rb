@@ -1,6 +1,7 @@
 
 class ArsenalfcResults::Results 
-  def open
-    puts "Welcome to Arsenal Fc Results"
+  def greeting
+    puts "Greetings! Welcome to Arsenal FC Results"
+    puts "Please select a season:"
   end
 end

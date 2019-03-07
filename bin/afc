@@ -2,4 +2,4 @@
 require './lib/arsenalfc_results'
 
 
-ArsenalfcResults::Results.new.open
+ArsenalfcResults::Results.new.greeting
