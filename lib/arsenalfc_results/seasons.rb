@@ -4,9 +4,11 @@ require "pry"
 
 
 class Seasons
+  attr_accessor :years, :competitions
+  
   @@all = []
   
-  def season_scraper
+  def self.season_scraper
     site = "http://www.espn.com/soccer/team/results/_/id/359/arsenal"
     page = Nokogiri::HTML(open(site))
     

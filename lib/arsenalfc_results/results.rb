@@ -1,4 +1,5 @@
 require "pry"
+require_relative "./seasons"
 
 class ArsenalfcResults::Results 
   def greeting
