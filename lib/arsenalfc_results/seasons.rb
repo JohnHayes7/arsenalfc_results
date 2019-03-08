@@ -17,7 +17,8 @@ class ArsenalfcResults::Seasons
     @@season_array.each do |s|
       site = s
       page = Nokogiri::HTML(open(site))
-      @@all_seasons << page.css("h2.seasonTitle").text.split(" ")[0]
+      season = page.css("h2.seasonTitle").text.split(" ")[0]
+      @@all_seasons << season
       # binding.pry
     end
   end
