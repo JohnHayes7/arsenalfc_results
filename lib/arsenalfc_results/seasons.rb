@@ -13,16 +13,27 @@ class ArsenalfcResults::Seasons
   
   @@season_array = [season_19, season_18]
   
+  def initialize(season)
+    @season = season
+  end
+  
   def self.season_scraper
     @@season_array.each do |s|
       site = s
       page = Nokogiri::HTML(open(site))
       season = page.css("h2.seasonTitle").text.split(" ")[0]
+      self.new(season)
       @@all_seasons << season
-      # binding.pry
+      
     end
   end
+  
   self.season_scraper
+  
+  def initialize(season)
+    @season = season
+     binding.pry
+  end
   
   def self.seasons
     @@all_seasons
