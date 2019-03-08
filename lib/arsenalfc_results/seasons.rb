@@ -4,7 +4,7 @@ require "open-uri"
 require "pry"
 
 
-class Seasons
+class ArsenalfcResults::Seasons
   attr_accessor :season, :competition
   
   @@all_seasons = []
