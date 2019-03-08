@@ -1,4 +1,4 @@
-
+require_relative "./fixtures"
 require "nokogiri"
 require "open-uri"
 require "pry"

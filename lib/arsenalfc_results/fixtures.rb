@@ -1,6 +1,4 @@
-require_relative "./arsenalfc_results/version"
-require_relative "./arsenalfc_results/results"
-require_relative "./arsenalfc_results/seasons"
+require_relative "./seasons"
 require "pry"
 
 class Fixtures
