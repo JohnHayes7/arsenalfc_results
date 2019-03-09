@@ -32,7 +32,7 @@ class ArsenalfcResults::Seasons
   
   def initialize(season)
     @season = season
-    # binding.pry
+    binding.pry
   end
   
   def self.seasons
@@ -46,6 +46,7 @@ class ArsenalfcResults::Seasons
     page = Nokogiri::HTML(open(site))
      @@comp_array << page.css("table.width580 tr td")[4].text
   end
+  self.competition_scraper
   
   
   
