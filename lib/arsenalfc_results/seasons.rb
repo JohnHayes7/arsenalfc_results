@@ -39,6 +39,12 @@ class ArsenalfcResults::Seasons
     @@all_seasons
   end
   
+  def self.competition_scraper
+    site = "https://www.11v11.com/teams/arsenal/tab/matches/"
+      page = Nokogiri::HTML(open(site))
+      page.css("table.width580 tr td")[4].text
+  end
+  
   
   
 end
