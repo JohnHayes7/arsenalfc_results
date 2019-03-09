@@ -8,10 +8,10 @@ class ArsenalfcResults::Seasons
   attr_accessor :season, :competition
   
   @@all_seasons = []
-  season_19 = "https://www.11v11.com/teams/arsenal/tab/matches/season/2019/"
-  season_18 = "https://www.11v11.com/teams/arsenal/tab/matches/season/2018/"
+  @season_19 = "https://www.11v11.com/teams/arsenal/tab/matches/season/2019/"
+  @season_18 = "https://www.11v11.com/teams/arsenal/tab/matches/season/2018/"
   
-  @@season_array = [season_19, season_18]
+  @@season_array = [@season_19, @season_18]
   
   def initialize(season)
     @season = season
@@ -39,10 +39,12 @@ class ArsenalfcResults::Seasons
     @@all_seasons
   end
   
+  @@comp_array = []
+  
   def self.competition_scraper
     site = "https://www.11v11.com/teams/arsenal/tab/matches/"
-      page = Nokogiri::HTML(open(site))
-      page.css("table.width580 tr td")[4].text
+    page = Nokogiri::HTML(open(site))
+     @@comp_array << page.css("table.width580 tr td")[4].text
   end
   
   
