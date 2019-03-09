@@ -16,7 +16,7 @@ class ArsenalfcResults::Seasons
   def initialize(years)
     @years = years
     @@all_seasons << self
-    binding.pry
+    
   end
   
   def self.season_scraper
@@ -32,19 +32,22 @@ class ArsenalfcResults::Seasons
   
   
   def self.seasons
-    @@all_seaons
+    @@all_seasons
     
   end
   
   @@comp_array = []
   
-  # def self.competition_scraper
-  #   site = "https://www.11v11.com/teams/arsenal/tab/matches/"
-  #   page = Nokogiri::HTML(open(site))
-  #   @@comp_array << page.css("table.width580 tr td")[4].text
-  # end
-  # self.competition_scraper
+  def self.competition_scraper
+    site = "https://www.11v11.com/teams/arsenal/tab/matches/"
+    page = Nokogiri::HTML(open(site))
+    @@comp_array << page.css("table.width580 tr td")[4].text
+  end
+   self.competition_scraper
   
+  def self.competitions 
+    @@comp_array
+  end
   
   
 end
