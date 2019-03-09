@@ -32,16 +32,13 @@ class ArsenalfcResults::Seasons
   
   def initialize(season)
     @season = season
-     binding.pry
+    # binding.pry
   end
   
   def self.seasons
     @@all_seasons
   end
   
-  # def self.seasons 
-  #   @@season_array
-  # end
   
   
 end
