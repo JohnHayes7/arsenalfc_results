@@ -33,18 +33,18 @@ class ArsenalfcResults::Seasons
   
   def self.seasons
     @@all_seasons
-    
   end
   
-  def every(n)
-    select{|x| index(x) % n == 0}
-  end
   
+  
+  @@comp_array = []
   
   def self.competition_scraper
     site = "https://www.11v11.com/teams/arsenal/tab/matches/"
     page = Nokogiri::HTML(open(site))
-    @@comp_array = page.css("table.width580 tr td").drop(3).every(5)
+    comps = page.css("table.width580 tr td")
+    
+    binding.pry
   end
    self.competition_scraper
   
@@ -52,5 +52,8 @@ class ArsenalfcResults::Seasons
     @@comp_array
   end
   
+  def every(n)
+    select{|x| index(x) % n == 0}
+  end
   
 end
