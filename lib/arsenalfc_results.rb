@@ -1,5 +1,5 @@
-require_relative "./arsenalfc_results/version"
-require_relative "./arsenalfc_results/results"
+require_relative "./version"
+require_relative "./results"
 
 # module ArsenalfcResults
 #   class Error < StandardError; end
