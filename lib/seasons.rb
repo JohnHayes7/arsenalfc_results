@@ -7,6 +7,7 @@ require "pry"
 class ArsenalfcResults::Seasons
   attr_accessor :years, :competition
   
+  @@all_competitions = []
   @@all_seasons = []
   @season_19 = "https://www.11v11.com/teams/arsenal/tab/matches/season/2019/"
   @season_18 = "https://www.11v11.com/teams/arsenal/tab/matches/season/2018/"
@@ -29,34 +30,8 @@ class ArsenalfcResults::Seasons
   
   self.season_scraper
   
-  def competition
-    @comp_array
-  end
-  
-  
   def self.seasons
     @@all_seasons
-  end
-  
-  
-  
-  
-  
-  def competition_scraper
-    site = "https://www.11v11.com/teams/arsenal/tab/matches/"
-    page = Nokogiri::HTML(open(site))
-    @comp_array = page.css("table.width580 tr td")[4]
-    
-    # binding.pry
-  end
-   competition_scraper
-  
-  # def self.all_competitions 
-  #   @@comp_array
-  # end
-  
-  def every(n)
-    select{|x| index(x) % n == 0}
   end
   
 end
