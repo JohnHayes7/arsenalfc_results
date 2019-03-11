@@ -11,11 +11,8 @@ class ArsenalfcResults::Competition
     drop_four = page.css("table.width580 tr td").drop(4)
     comps = drop_four.each_with_index.select{|x, i| i % 5 == 0}
     comps.each do |c|
-      c.each_with_index do |cmp, i|
-        i % 2 == 0
-        @comp_array << cmp
+      @comp_array << c.first.text
         binding.pry
-      end
     end
   end
    
