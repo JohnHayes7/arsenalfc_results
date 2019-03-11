@@ -1,3 +1,4 @@
+# fixture_array =[fixture_1 = {:date => "date", :competition => "competition",  :teams => "team 1 vs team 2", :score => "goals for team 1 : goals for team 2}"
 require_relative "./arsenalfc_results"
 require "nokogiri"
 require "open-uri"
@@ -6,10 +7,11 @@ require "pry"
 class ArsenalfcResults::Fixtures
   attr_accessor :season, :competition, :date, :teams, :score
   
-  # fixture_array =[fixture_1 = {:date => "date", :competition => "competition",  :teams => "team 1 vs team 2", :score => "goals for team 1 : goals for team 2}"
+  def fixture_creator
+    fixture = {}
+    fixture[:date] = @date_array[0]
+  end
                 
-  
-  
   def self.scraper
     @date_array = []
     @teams_array = []
@@ -33,14 +35,12 @@ class ArsenalfcResults::Fixtures
     score = drop_three.each_with_index.select{|x, i| i % 5 == 0}
     score.each do |s|
     @score_array << s.first.text.strip
-    binding.pry
     end
-    @date_array
-    @teams_array
-    @score_array
+  
+    fixture = {:date => "#{@date_array[0]}"}
+    binding.pry
   end
   
   self.scraper
-  
   
 end
