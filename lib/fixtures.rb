@@ -19,23 +19,26 @@ class ArsenalfcResults::Fixtures
     drop_zero = page.css("table.width580 tr td")
     date = drop_zero.each_with_index.select{|x, i| i % 5 == 0}
     date.each do |d|
-    @fixtures_array << @fixture = {:date => "#{d.first.text}"}
-    binding.pry
+    @date_array << d.first.text
+    
+    end
     
     #TEAMS
     drop_one = page.css("table.width580 tr td").drop(1)
     teams = drop_one.each_with_index.select{|x, i| i % 5 == 0}
     teams.each do |t|
-      # @fixture[:teams] = "#{t.first.text}"
-      # @fixtures_array << @fixture
-      end
-    end
+     @teams_array << t.first.text
+     
+   end
+   
     #SCORE
     drop_three = page.css("table.width580 tr td").drop(3)
     score = drop_three.each_with_index.select{|x, i| i % 5 == 0}
     score.each do |s|
     @score_array << s.first.text.strip
     end
+    @fixtures = @date_array.zip(@teams_array, @score_array)
+    binding.pry
   end
   
   self.scraper
