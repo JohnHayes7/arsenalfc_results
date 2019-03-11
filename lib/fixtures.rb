@@ -43,6 +43,8 @@ class ArsenalfcResults::Fixtures
     score.each do |s|
     @score_array << s.first.text.strip
     end
+    
+    #COMBINES DATA INTO ONE ARRAY FOR INSTANTIATION
      @fixtures = @date_array.zip(@teams_array, @score_array)
     
      @fixtures.each do |f|
