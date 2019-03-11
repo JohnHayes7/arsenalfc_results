@@ -35,8 +35,4 @@ class ArsenalfcResults::Seasons
     @@all_seasons
   end
   
-  # def competitions
-    
-  # end
-  
 end

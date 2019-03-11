@@ -8,19 +8,26 @@ class ArsenalfcResults::Fixtures
   attr_accessor :season, :competition, :date, :teams, :score
   
   @fixtures_array = []
-                
+  
+  def initialize(date, teams, score)
+    @date = date
+    @teams = teams
+    @score = score 
+    binding.pry
+  end
+  
   def self.scraper
     @date_array = []
     @teams_array = []
     @score_array = []
     site = "https://www.11v11.com/teams/arsenal/tab/matches/"
     page = Nokogiri::HTML(open(site))
+    
     #DATE
     drop_zero = page.css("table.width580 tr td")
     date = drop_zero.each_with_index.select{|x, i| i % 5 == 0}
     date.each do |d|
     @date_array << d.first.text
-    
     end
     
     #TEAMS
@@ -28,8 +35,7 @@ class ArsenalfcResults::Fixtures
     teams = drop_one.each_with_index.select{|x, i| i % 5 == 0}
     teams.each do |t|
      @teams_array << t.first.text
-     
-   end
+    end
    
     #SCORE
     drop_three = page.css("table.width580 tr td").drop(3)
@@ -37,10 +43,13 @@ class ArsenalfcResults::Fixtures
     score.each do |s|
     @score_array << s.first.text.strip
     end
-    @fixtures = @date_array.zip(@teams_array, @score_array)
-    binding.pry
+     @fixtures = @date_array.zip(@teams_array, @score_array)
+    
+     @fixtures.each do |f|
+        self.new("#{f[0]}", "#{f[1]}", "#{f[2]}")
+    end
   end
   
   self.scraper
-
+  
 end
