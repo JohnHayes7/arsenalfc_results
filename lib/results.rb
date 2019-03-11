@@ -17,19 +17,12 @@ class ArsenalfcResults::Results
     
     if input == "1"
       puts "Select a competition from the 2018/19 season:"
-      competitions
+      
     elsif input =="2"
       puts "Select a competition from the 2017/18 season:"
-       competitions
+       
     else 
       menu
     end
   end
-  
-  def competitions
-    ArsenalfcResults::Seasons.competitions.each_with_index do |c, i|
-      puts "#{i+1}. #{c}"
-    end
-  end
-  
 end

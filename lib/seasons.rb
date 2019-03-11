@@ -5,10 +5,10 @@ require "pry"
 
 
 class ArsenalfcResults::Seasons
-  attr_accessor :years, :competition
+  attr_accessor :years, :competitions
   
-  @@all_competitions = []
   @@all_seasons = []
+  @competitions = []
   @season_19 = "https://www.11v11.com/teams/arsenal/tab/matches/season/2019/"
   @season_18 = "https://www.11v11.com/teams/arsenal/tab/matches/season/2018/"
   
@@ -32,6 +32,11 @@ class ArsenalfcResults::Seasons
   
   def self.seasons
     @@all_seasons
+  end
+  
+  def competitions
+    @competitions
+    binding.pry
   end
   
 end
