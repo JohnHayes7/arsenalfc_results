@@ -1,4 +1,4 @@
-require_relative "arsenalfc_results"
+require_relative "./arsenalfc_results"
 require "nokogiri"
 require "open-uri"
 require "pry"
@@ -8,7 +8,6 @@ class ArsenalfcResults::Seasons
   attr_accessor :years, :competitions
   
   @@all_seasons = []
-  @competitions = []
   @season_19 = "https://www.11v11.com/teams/arsenal/tab/matches/season/2019/"
   @season_18 = "https://www.11v11.com/teams/arsenal/tab/matches/season/2018/"
   
@@ -17,6 +16,8 @@ class ArsenalfcResults::Seasons
   def initialize(years)
     @years = years
     @@all_seasons << self
+    # @competitions = ArsenalfcResults::Competition.current_comps
+   
   end
   
   def self.season_scraper
@@ -34,9 +35,8 @@ class ArsenalfcResults::Seasons
     @@all_seasons
   end
   
-  def competitions
-    @competitions
-    binding.pry
-  end
+  # def competitions
+    
+  # end
   
 end

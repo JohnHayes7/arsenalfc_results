@@ -1,4 +1,4 @@
-require_relative "arsenalfc_results"
+require_relative "./arsenalfc_results"
 require "pry"
 
 class ArsenalfcResults::Results 
