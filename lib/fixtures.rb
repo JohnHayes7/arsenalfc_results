@@ -7,10 +7,7 @@ require "pry"
 class ArsenalfcResults::Fixtures
   attr_accessor :season, :competition, :date, :teams, :score
   
-  def fixture_creator
-    fixture = {}
-    fixture[:date] = @date_array[0]
-  end
+  @fixtures_array = []
                 
   def self.scraper
     @date_array = []
@@ -36,9 +33,18 @@ class ArsenalfcResults::Fixtures
     score.each do |s|
     @score_array << s.first.text.strip
     end
-  
-    fixture = {:date => "#{@date_array[0]}"}
+    #ITERATOR FOR HASH
+    @date_array.each do |d|
+      @teams_array.each do |t|
+        @score_array.each do |s|
+    @fixtures_array << @fixture ={:date => "#{d}", :teams => "#{t}", :score => "#{s}"}
+    
+    
     binding.pry
+        end
+      end
+    end
+    
   end
   
   self.scraper
