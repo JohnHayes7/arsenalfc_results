@@ -10,6 +10,7 @@ class ArsenalfcResults::Competition
   def initialize(name)
     @name = name
     @@all_comps << self
+    @seasons = []
   end
   
   def self.competition_scraper
@@ -32,6 +33,16 @@ class ArsenalfcResults::Competition
     @current_comps
   end
   
+  def seasons
+    @seasons
+  end
+  
+  def add_seasons(season)
+    @seasons << season
+    if !season.competitions.include?(self)
+      season.add_competition(self)
+    end
+  end
   
   
 end
