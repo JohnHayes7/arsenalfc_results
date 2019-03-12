@@ -19,11 +19,11 @@ class ArsenalfcResults::Competition
     comp_array << c.first.text
     end
     comp_array.uniq.each do |c|
-      @comps = self.new(c)
+      self.new(c)
+      binding.pry
     end
   end
   
-  self.competition_scraper
   
   def initialize(name)
     @name = name
@@ -44,6 +44,10 @@ class ArsenalfcResults::Competition
     if !season.competitions.include?(self)
       season.add_competition(self)
     end
+  end
+  
+  def self.all_comps
+    @@all_comps
   end
   
   

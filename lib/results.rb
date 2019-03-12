@@ -17,12 +17,19 @@ class ArsenalfcResults::Results
     
     if input == "1"
       puts "Select a competition from the #{ArsenalfcResults::Seasons.current_season.years} season:"
+      competitions
       
     elsif input =="2"
       puts "Select a competition from the #{ArsenalfcResults::Seasons.past_seasons[0].years} season:"
-       
+      competitions
     else 
       menu
+    end
+  end
+  
+  def competitions
+    ArsenalfcResults::Competition.all_comps.each_with_index do |c, i|
+      puts "#{i+1}. #{c}"
     end
   end
 end

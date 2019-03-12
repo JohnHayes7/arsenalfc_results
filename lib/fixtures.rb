@@ -55,6 +55,6 @@ class ArsenalfcResults::Fixtures
     @fixtures
   end
   
-  self.scraper
+  
   
 end
