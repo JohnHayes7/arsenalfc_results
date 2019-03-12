@@ -20,7 +20,6 @@ class ArsenalfcResults::Competition
     end
     comp_array.uniq.each do |c|
       self.new(c)
-      binding.pry
     end
   end
   

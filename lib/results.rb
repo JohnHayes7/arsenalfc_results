@@ -29,7 +29,7 @@ class ArsenalfcResults::Results
   
   def competitions
     ArsenalfcResults::Competition.all_comps.each_with_index do |c, i|
-      puts "#{i+1}. #{c}"
+      puts "#{i+1}. #{c.name}"
     end
   end
 end
