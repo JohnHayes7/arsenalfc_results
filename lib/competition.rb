@@ -28,11 +28,10 @@ class ArsenalfcResults::Competition
     @name = name
     @@all_comps << self
     @seasons = []
+    @fixtures =[]
+    binding.pry
   end
   
-  def self.current_comps
-    @current_comps
-  end
   
   def seasons
     @seasons
