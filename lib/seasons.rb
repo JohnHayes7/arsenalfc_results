@@ -16,8 +16,6 @@ class ArsenalfcResults::Seasons
   def initialize(years)
     @years = years
     @@all_seasons << self
-    # @competitions = ArsenalfcResults::Competition.current_comps
-   
   end
   
   def self.season_scraper
@@ -31,8 +29,19 @@ class ArsenalfcResults::Seasons
   
   self.season_scraper
   
-  def self.seasons
+  def self.all_seasons
+    @current_season = @@all_seasons[0]
+    @past_seasons = @@all_seasons.drop(1)
     @@all_seasons
+  end
+  
+  def self.current_season
+    @current_season
+    
+  end
+  
+  def self.past_seasons
+    @past_seasons
   end
   
 end

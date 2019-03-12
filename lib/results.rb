@@ -9,14 +9,14 @@ class ArsenalfcResults::Results
   
   def menu
     puts "Please select a season:"
-    ArsenalfcResults::Seasons.seasons.each_with_index do |s, i|
+    ArsenalfcResults::Seasons.all_seasons.each_with_index do |s, i|
       puts "#{i+1}. #{s.years}"
     end
     
     input = gets.strip.downcase
     
     if input == "1"
-      puts "Select a competition from the 2018/19 season:"
+      puts "Select a competition from the #{ArsenalfcResults::Seasons.current_season.years} season:"
       
     elsif input =="2"
       puts "Select a competition from the 2017/18 season:"

@@ -2,15 +2,14 @@ require_relative "./arsenalfc_results"
 
 class ArsenalfcResults::Competition
   
-  attr_accessor :name
+  attr_accessor :name, :fixtures
   
-  @@current_comps = []
- 
+  
+  @@all_comps =[]
   
   def initialize(name)
     @name = name
-    @@current_comps << self
-    
+    @@all_comps << self
   end
   
   def self.competition_scraper
@@ -23,14 +22,14 @@ class ArsenalfcResults::Competition
     comp_array << c.first.text
     end
     comp_array.uniq.each do |c|
-      self.new(c)
+      @comps = self.new(c)
     end
   end
   
   self.competition_scraper
   
   def self.current_comps
-    @@current_comps
+    @current_comps
   end
   
   
