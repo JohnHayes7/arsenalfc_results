@@ -38,7 +38,6 @@ class ArsenalfcResults::Seasons
   def self.current_season
     @current_season = @@all_seasons[0]
     @current_season
-    
   end
   
   def self.past_seasons
@@ -51,10 +50,13 @@ class ArsenalfcResults::Seasons
   end
   
   def add_competition(competition)
-    @competitions << name
+    @competitions << competition
+    binding.pry
     if !competition.seasons.include?(self)
       competition.add_seasons(self)
     end
   end
+  
+  
   
 end

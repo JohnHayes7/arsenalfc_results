@@ -7,11 +7,7 @@ class ArsenalfcResults::Competition
   
   @@all_comps =[]
   
-  def initialize(name)
-    @name = name
-    @@all_comps << self
-    @seasons = []
-  end
+  #NEED TO INSTANTIATE SEASONS FROM COMPETITION CLASS 
   
   def self.competition_scraper
     comp_array = []
@@ -29,6 +25,12 @@ class ArsenalfcResults::Competition
   
   self.competition_scraper
   
+  def initialize(name)
+    @name = name
+    @@all_comps << self
+    @seasons = []
+  end
+  
   def self.current_comps
     @current_comps
   end
@@ -43,6 +45,9 @@ class ArsenalfcResults::Competition
       season.add_competition(self)
     end
   end
+  
+  
+    
   
   
 end
