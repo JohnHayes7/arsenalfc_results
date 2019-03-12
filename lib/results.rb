@@ -19,7 +19,7 @@ class ArsenalfcResults::Results
       puts "Select a competition from the #{ArsenalfcResults::Seasons.current_season.years} season:"
       
     elsif input =="2"
-      puts "Select a competition from the 2017/18 season:"
+      puts "Select a competition from the #{ArsenalfcResults::Seasons.past_seasons[0].years} season:"
        
     else 
       menu
