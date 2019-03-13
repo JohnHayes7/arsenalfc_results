@@ -8,12 +8,11 @@ class ArsenalfcResults::Fixtures
   
     
     
-  def initialize(date, teams, score, comp)
+  def initialize(date, teams, score, comp_name)
     @date = date
     @teams = teams
     @score = score 
-    @comp = comp
-    
+    ArsenalfcResults::Competition.new(comp_name)
   end
   
   def self.scraper
@@ -65,6 +64,7 @@ class ArsenalfcResults::Fixtures
   def fixtures
     @fixtures
   end
+  
   
   
   

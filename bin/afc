@@ -2,6 +2,5 @@
 require './lib/arsenalfc_results'
 
 ArsenalfcResults::Seasons.season_scraper
-ArsenalfcResults::Competition.competition_scraper
 ArsenalfcResults::Fixtures.scraper
 ArsenalfcResults::Results.new.greeting
