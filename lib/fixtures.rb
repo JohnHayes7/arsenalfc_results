@@ -12,7 +12,7 @@ class ArsenalfcResults::Fixtures
     @date = date
     @teams = teams
     @score = score 
-    ArsenalfcResults::Competition.new(comp_name)
+    ArsenalfcResults::Competition.new(comp_name, date, teams, score)
   end
   
   def self.scraper
@@ -57,7 +57,6 @@ class ArsenalfcResults::Fixtures
     
      fixtures.each do |f|
         self.new("#{f[0]}", "#{f[1]}", "#{f[2]}", "#{f[3]}")
-        binding.pry
     end
   end
   

@@ -2,9 +2,10 @@ require_relative "./arsenalfc_results"
 
 class ArsenalfcResults::Competition
   
-  attr_accessor :name, :fixtures
+  attr_accessor :name, :fixture, :date, :score
   
-  @@all_comps =[]
+  @@all_comps = []
+  @@all_fixtures = []
   
   # def self.competition_scraper
   #   comp_array = []
@@ -21,14 +22,18 @@ class ArsenalfcResults::Competition
   # end
   
   
-  def initialize(comp_name)
+  def initialize(comp_name, date, teams, score)
+    @season = []
+    @fixture =[]
     @name = comp_name
-    binding.pry
-    if !@@all_comps.include(self)
+    if !@@all_comps.include?(self)
       @@all_comps << self
     end
-    @seasons = []
-    @fixtures =[]
+    @fixture << date
+    @fixture << teams
+    @fixture << score
+    @@all_fixtures << self
+    binding.pry
   end
   
   
