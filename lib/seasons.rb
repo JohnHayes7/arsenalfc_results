@@ -39,7 +39,6 @@ class ArsenalfcResults::Seasons
   
   def add_competition(competition)
     @competitions << competition
-    binding.pry
     if !competition.seasons.include?(self)
       competition.add_season(self)
     end
