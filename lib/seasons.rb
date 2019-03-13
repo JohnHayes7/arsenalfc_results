@@ -19,7 +19,7 @@ class ArsenalfcResults::Seasons
   
   
   
-  def self.all_seasons
+  def all_seasons
     @@all_seasons
   end
   
@@ -37,13 +37,13 @@ class ArsenalfcResults::Seasons
     @competitions
   end
   
-  # def add_competition(competition)
-  #   @competitions << competition
-  #   binding.pry
-  #   if !competition.seasons.include?(self)
-  #     competition.add_seasons(self)
-  #   end
-  # end
+  def add_competition(competition)
+    @competitions << competition
+    binding.pry
+    if !competition.seasons.include?(self)
+      competition.add_season(self)
+    end
+  end
   
   
   

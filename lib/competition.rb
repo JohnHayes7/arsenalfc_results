@@ -12,6 +12,7 @@ class ArsenalfcResults::Competition
   
   def initialize(comp_name, date, teams, score)
     @fixture ={}
+    @seasons = []
     @name = comp_name
     if !@@all_comps.include?(self)
       @@all_comps << self
@@ -20,8 +21,7 @@ class ArsenalfcResults::Competition
     @fixture[:teams] = teams
     @fixture[:score] = score
     season_scraper
-    @fixture[:season] = @season
-    binding.pry
+    # @fixture[:season] = @season
   end
   
   def season_scraper
@@ -29,7 +29,9 @@ class ArsenalfcResults::Competition
       site = s
       page = Nokogiri::HTML(open(site))
       years = page.css("h2.seasonTitle").text.split(" ")[0]
-      @season = ArsenalfcResults::Seasons.new(years)
+      season = ArsenalfcResults::Seasons.new(years)
+      season.all_seasons << season
+      season.add_competition(self)
     end
   end
   
@@ -39,6 +41,10 @@ class ArsenalfcResults::Competition
     if !season.competitions.include?(self)
       season.add_competition(self)
     end
+  end
+  
+  def seasons
+    @seasons
   end
   
   def self.all_comps
