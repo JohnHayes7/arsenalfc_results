@@ -8,10 +8,11 @@ class ArsenalfcResults::Fixtures
   
     
     
-  def initialize(date, teams, score)
+  def initialize(date, teams, score, comp)
     @date = date
     @teams = teams
     @score = score 
+    @comp = comp
     
   end
   
@@ -19,6 +20,7 @@ class ArsenalfcResults::Fixtures
     date_array = []
     teams_array = []
     score_array = []
+    comp_array = []
     site = "https://www.11v11.com/teams/arsenal/tab/matches/"
     page = Nokogiri::HTML(open(site))
     
@@ -43,11 +45,20 @@ class ArsenalfcResults::Fixtures
     score_array << s.first.text.strip
     end
     
+    #COMPETITION 
+    drop_four = page.css("table.width580 tr td").drop(4)
+    comp = drop_four.each_with_index.select{|x, i| i % 5 == 0}
+    comp.each do |c|
+    comp_array << c.first.text.strip
+    
+    end
+    
     #COMBINES DATA INTO ONE ARRAY FOR INSTANTIATION
-     fixtures = date_array.zip(teams_array, score_array)
+     fixtures = date_array.zip(teams_array, score_array, comp_array)
     
      fixtures.each do |f|
-        self.new("#{f[0]}", "#{f[1]}", "#{f[2]}")
+        self.new("#{f[0]}", "#{f[1]}", "#{f[2]}", "#{f[3]}")
+        binding.pry
     end
   end
   

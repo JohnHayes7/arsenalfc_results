@@ -4,10 +4,7 @@ class ArsenalfcResults::Competition
   
   attr_accessor :name, :fixtures
   
-  
   @@all_comps =[]
-  
-  #NEED TO INSTANTIATE SEASONS FROM COMPETITION CLASS 
   
   def self.competition_scraper
     comp_array = []
@@ -29,7 +26,6 @@ class ArsenalfcResults::Competition
     @@all_comps << self
     @seasons = []
     @fixtures =[]
-    binding.pry
   end
   
   
