@@ -12,7 +12,8 @@ class ArsenalfcResults::Fixtures
     @date = date
     @teams = teams
     @score = score 
-    ArsenalfcResults::Competition.new(comp_name, date, teams, score)
+    @competition = ArsenalfcResults::Competition.new(comp_name, date, teams, score)
+    binding.pry
   end
   
   def self.scraper
