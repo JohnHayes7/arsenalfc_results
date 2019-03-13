@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 require './lib/arsenalfc_results'
 
-ArsenalfcResults::Seasons.season_scraper
 ArsenalfcResults::Fixtures.scraper
 ArsenalfcResults::Results.new.greeting
