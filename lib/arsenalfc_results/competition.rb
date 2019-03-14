@@ -1,4 +1,3 @@
-require_relative "./arsenalfc_results"
 
 class ArsenalfcResults::Competition
   

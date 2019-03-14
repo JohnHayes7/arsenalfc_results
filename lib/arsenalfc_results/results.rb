@@ -1,5 +1,3 @@
-require_relative "./arsenalfc_results"
-require "pry"
 
 class ArsenalfcResults::Results 
   def greeting

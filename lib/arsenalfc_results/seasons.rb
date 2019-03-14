@@ -1,8 +1,3 @@
-require_relative "./arsenalfc_results"
-require "nokogiri"
-require "open-uri"
-require "pry"
-
 
 class ArsenalfcResults::Seasons
   attr_accessor :years, :competitions

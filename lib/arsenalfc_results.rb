@@ -1,8 +1,12 @@
-require_relative "./version"
-require_relative "./results"
-require_relative "./fixtures"
-require_relative "./seasons"
-require_relative "./competition"
+require_relative "./arsenalfc_results/version"
+require_relative "./arsenalfc_results/results"
+require_relative "./arsenalfc_results/fixtures"
+require_relative "./arsenalfc_results/seasons"
+require_relative "./arsenalfc_results/competition"
+
+require "nokogiri"
+require "open-uri"
+require "pry"
 
 # module ArsenalfcResults
 #   class Error < StandardError; end
