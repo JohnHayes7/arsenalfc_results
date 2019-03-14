@@ -5,10 +5,6 @@ class ArsenalfcResults::Competition
   
   @@all_comps = []
   
-  @season_19 = "https://www.11v11.com/teams/arsenal/tab/matches/season/2019/"
-  @season_18 = "https://www.11v11.com/teams/arsenal/tab/matches/season/2018/"
-  @@season_array = [@season_19, @season_18]
-  
   def initialize(comp_name, date, teams, score)
     @fixture ={}
     @seasons = []
@@ -23,16 +19,7 @@ class ArsenalfcResults::Competition
     # @fixture[:season] = @season
   end
   
-  def season_scraper
-    @@season_array.each do |s|
-      site = s
-      page = Nokogiri::HTML(open(site))
-      years = page.css("h2.seasonTitle").text.split(" ")[0]
-      season = ArsenalfcResults::Seasons.new(years)
-      season.all_seasons << season
-      season.add_competition(self)
-    end
-  end
+  
   
   
   def add_season(season)
