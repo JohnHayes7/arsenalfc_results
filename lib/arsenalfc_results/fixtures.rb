@@ -13,8 +13,6 @@ class ArsenalfcResults::Fixtures
     @@all_fixtures << self
   end
   
-  
-  
   def self.fixtures
     @@all_fixtures
   end

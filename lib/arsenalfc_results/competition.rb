@@ -15,8 +15,10 @@ class ArsenalfcResults::Competition
     @fixture[:date] = date
     @fixture[:teams] = teams
     @fixture[:score] = score
-    season_scraper
-    # @fixture[:season] = @season
+    if !@@all_comps.include?(self)
+      @@all_comps << self
+    end
+    binding.pry
   end
   
   
