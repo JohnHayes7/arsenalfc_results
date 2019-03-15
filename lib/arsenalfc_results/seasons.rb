@@ -4,15 +4,11 @@ class ArsenalfcResults::Seasons
   
   @@all_seasons = []
   
-  
-  
   def initialize(years)
     @years = years
     @@all_seasons << self
     @competitions = []
   end
-  
-  
   
   def self.all_seasons
     @@all_seasons
@@ -38,7 +34,4 @@ class ArsenalfcResults::Seasons
       competition.add_season(self)
     end
   end
-  
-  
-  
 end
