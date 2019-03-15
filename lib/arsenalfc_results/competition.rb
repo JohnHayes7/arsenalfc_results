@@ -4,37 +4,39 @@ class ArsenalfcResults::Competition
   attr_accessor :name, :fixture, :date, :score, :season
   
   @@all_comps = []
+  @@comp_names =[]
   
   def initialize(comp_name, date, teams, score)
     @fixture ={}
     @seasons = []
     @name = comp_name
+    if !@@comp_names.include?(self.name)
+      @@comp_names << self.name
+    end
     if !@@all_comps.include?(self)
       @@all_comps << self
     end
     @fixture[:date] = date
     @fixture[:teams] = teams
     @fixture[:score] = score
-    if !@@all_comps.include?(self)
-      @@all_comps << self
-    end
-    binding.pry
   end
   
-  
-  
-  
-  def add_season(season)
-    @seasons << season
-    # if !season.competitions.include?(self)
-    #   season.add_competition(self)
-      binding.pry
-    # end
-  end
+  # def add_season(season)
+  #   @seasons << season
+  #   # if !season.competitions.include?(self)
+  #   #   season.add_competition(self)
+  #     binding.pry
+  #   # end
+  # end
   
   def seasons
     @seasons
   end
+  
+  def self.comp_names
+    @@comp_names
+  end
+  
   
   def self.all_comps
     @@all_comps

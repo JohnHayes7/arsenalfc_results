@@ -8,25 +8,33 @@ class ArsenalfcResults::CLI
   
   def menu
     puts "Please select a competition:"
-    ArsenalfcResults::Seasons.all_seasons.each_with_index do |s, i|
-      puts "#{i+1}. #{s.years}"
+    ArsenalfcResults::Competition.comp_names.each_with_index do |c, i|
+      puts "#{i+1}. #{c}"
     end
     
     input = gets.strip.downcase
     
     if input == "1"
-      competitions
+      puts "Here are the results from the Premier League"
       
     elsif input =="2"
-      competitions
+      puts "Here are the results from the Football League Trophy"
+      
+    elsif input == "3"
+      puts "Here are the results from the Europa League"
+      
+    elsif input == "4"
+      puts "Here are the results from the League Cup"
+    
+    elsif input == "5"
+      puts "Here are the results from the FA Cup"
+    
     else 
       menu
     end
   end
   
   def competitions
-    ArsenalfcResults::Competition.all_comps.each_with_index do |c, i|
-      puts "#{i+1}. #{c.name}"
-    end
+    
   end
 end
