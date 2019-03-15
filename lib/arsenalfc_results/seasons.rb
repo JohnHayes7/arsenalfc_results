@@ -14,7 +14,7 @@ class ArsenalfcResults::Seasons
   
   
   
-  def all_seasons
+  def self.all_seasons
     @@all_seasons
   end
   

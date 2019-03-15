@@ -1,5 +1,5 @@
 
-class ArsenalfcResults::Results 
+class ArsenalfcResults::CLI 
   def greeting
     puts "Welcome to Arsenal FC Results"
     menu

@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
 require './lib/arsenalfc_results'
 
-ArsenalfcResults::Fixtures.scraper
-ArsenalfcResults::Results.new.greeting
+ArsenalfcResults::CLI.new.greeting

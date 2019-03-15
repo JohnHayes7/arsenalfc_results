@@ -1,9 +1,9 @@
 require_relative "./arsenalfc_results/version"
-require_relative "./arsenalfc_results/results"
+require_relative "./arsenalfc_results/cli"
 require_relative "./arsenalfc_results/fixtures"
 require_relative "./arsenalfc_results/seasons"
 require_relative "./arsenalfc_results/competition"
-require_relative "./aresenalfc_results/scraper"
+require_relative "./arsenalfc_results/scraper"
 
 require "nokogiri"
 require "open-uri"
