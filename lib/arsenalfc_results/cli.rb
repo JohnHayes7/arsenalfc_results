@@ -6,6 +6,7 @@ class ArsenalfcResults::CLI
   def greeting
     puts "Welcome to Arsenal FC Results"
     ArsenalfcResults::Scraper.competition_scraper
+    ArsenalfcResults::Scraper.fixture_scraper
     menu
   end
   
@@ -19,7 +20,7 @@ class ArsenalfcResults::CLI
     
     if input == "1"
       puts "Here are the results from the Premier League"
-      get_fixtures
+      
       
       
     elsif input =="2"
@@ -39,13 +40,5 @@ class ArsenalfcResults::CLI
     end
   end
   
-  def
   
-  def competition_names
-    
-  end
-  
-  def get_fixtures
-    x = ArsenalfcResults::Scraper.fixture_scraper
-  end
 end
