@@ -9,12 +9,17 @@ class ArsenalfcResults::Fixtures
     @date = date
     @teams = teams
     @score = score 
-    competition = ArsenalfcResults::Competition.new(comp_name, date, teams, score)
+    @competition = ArsenalfcResults::Competition.new(comp_name, date, teams, score)
     @@all_fixtures << self
+    @season = ArsenalfcResults::Seasons.all_seasons
   end
   
   def self.fixtures
     @@all_fixtures
+  end
+  
+  def add_season
+    ArsenalfcResults::Seasons.all_seasons[0]
   end
     
   

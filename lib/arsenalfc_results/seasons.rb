@@ -7,7 +7,8 @@ class ArsenalfcResults::Seasons
   def initialize(years)
     @years = years
     @@all_seasons << self
-    @competitions = []
+    @competitions = ArsenalfcResults::Competition.all_comps
+    binding.pry
   end
   
   def self.all_seasons

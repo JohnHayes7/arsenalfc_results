@@ -3,6 +3,7 @@ class ArsenalfcResults::CLI
   def greeting
     puts "Welcome to Arsenal FC Results"
     ArsenalfcResults::Scraper.fixture_scraper
+    ArsenalfcResults::Scraper.season_scraper
     menu
   end
   

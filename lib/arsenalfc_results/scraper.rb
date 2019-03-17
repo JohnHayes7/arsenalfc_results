@@ -5,8 +5,6 @@ class ArsenalfcResults::Scraper
       page = Nokogiri::HTML(open(site))
       years = page.css("h2.seasonTitle").text.split(" ")[0]
       season = ArsenalfcResults::Seasons.new(years)
-      
-      binding.pry
   end
   
   def self.fixture_scraper
