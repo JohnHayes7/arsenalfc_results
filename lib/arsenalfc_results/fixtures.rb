@@ -10,7 +10,7 @@ class ArsenalfcResults::Fixtures
     @fixture[:date] = date
     @fixture[:teams] = teams
     @fixture[:score] = score
-    @competition = ArsenalfcResults::Competition.new(comp_name, date, teams, score)
+    @fixture[:competition] = comp_name
     @@all_fixtures << self
   end
   

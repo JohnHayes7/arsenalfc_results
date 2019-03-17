@@ -15,12 +15,12 @@ class ArsenalfcResults::CLI
         puts "#{i+1}. #{c}"
     end
     
-    
     input = gets.strip.downcase
     
     if input == "1"
       puts "Here are the results from the Premier League"
-      ArsenalfcResults::Competition.all_comps
+      get_fixtures
+      
       
     elsif input =="2"
       puts "Here are the results from the Football League Trophy"
@@ -30,16 +30,22 @@ class ArsenalfcResults::CLI
       
     elsif input == "4"
       puts "Here are the results from the League Cup"
-    
+      
     elsif input == "5"
       puts "Here are the results from the FA Cup"
-    
-    else 
+      
+    else
       menu
     end
   end
   
+  def
+  
   def competition_names
     
+  end
+  
+  def get_fixtures
+    x = ArsenalfcResults::Scraper.fixture_scraper
   end
 end

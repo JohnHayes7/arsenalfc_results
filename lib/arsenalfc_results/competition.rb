@@ -5,23 +5,37 @@ class ArsenalfcResults::Competition
   
   @@all_comps = []
   @@comp_names =[]
+  @@prem = []
+  @@europa = []
+  @@fa = []
+  @@league_cup = []
+  @@league_trophy = []
   
   def initialize(comp_name)
     # @season = ArsenalfcResults::Scraper.season_scraper
     @name = comp_name
-    if !@@comp_names.include?(self.name)
-      @@comp_names << self.name
+    if !@@all_comps.include?(self)
+         @@all_comps << self
     end
-      @@all_comps << self
+    if !@@comp_names.include?(self.name)
+        @@comp_names << self.name
+    end
+    binding.pry
+    fixture_split
   end
   
-  # def add_season(season)
-  #   @seasons << season
-  #   # if !season.competitions.include?(self)
-  #   #   season.add_competition(self)
-  #     binding.pry
-  #   # end
-  # end
+  def fixture_split
+    ArsenalfcResults::Fixtures.fixtures.each do |f|
+      if self.name == "Premier League"
+        @@prem << f
+      elsif self.name == "Football League Trophy"
+        @@league_trophy << f
+      binding.pry
+      end
+    end
+    
+    
+  end
   
   def season
     @season
