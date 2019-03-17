@@ -6,9 +6,10 @@ class ArsenalfcResults::Fixtures
   @@all_fixtures = []
   
   def initialize(date, teams, score, comp_name)
-    @date = date
-    @teams = teams
-    @score = score 
+    @fixture ={}
+    @fixture[:date] = date
+    @fixture[:teams] = teams
+    @fixture[:score] = score
     @competition = ArsenalfcResults::Competition.new(comp_name, date, teams, score)
     @@all_fixtures << self
   end

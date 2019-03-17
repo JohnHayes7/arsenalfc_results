@@ -6,19 +6,13 @@ class ArsenalfcResults::Competition
   @@all_comps = []
   @@comp_names =[]
   
-  def initialize(comp_name, date, teams, score)
-    @fixture ={}
-    @fixture[:date] = date
-    @fixture[:teams] = teams
-    @fixture[:score] = score
-    @season = ArsenalfcResults::Scraper.season_scraper
+  def initialize(comp_name)
+    # @season = ArsenalfcResults::Scraper.season_scraper
     @name = comp_name
     if !@@comp_names.include?(self.name)
       @@comp_names << self.name
     end
-    if !@@all_comps.include?(self)
       @@all_comps << self
-    end
   end
   
   # def add_season(season)

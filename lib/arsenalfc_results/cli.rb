@@ -1,16 +1,20 @@
 
-class ArsenalfcResults::CLI 
+class ArsenalfcResults::CLI
+  
+  @@comp_names = []
+  
   def greeting
     puts "Welcome to Arsenal FC Results"
-    ArsenalfcResults::Scraper.fixture_scraper
+    ArsenalfcResults::Scraper.competition_scraper
     menu
   end
   
   def menu
     puts "Please select a competition:"
     ArsenalfcResults::Competition.comp_names.each_with_index do |c, i|
-      puts "#{i+1}. #{c}"
+        puts "#{i+1}. #{c}"
     end
+    
     
     input = gets.strip.downcase
     
@@ -35,7 +39,7 @@ class ArsenalfcResults::CLI
     end
   end
   
-  def competitions
+  def competition_names
     
   end
 end
