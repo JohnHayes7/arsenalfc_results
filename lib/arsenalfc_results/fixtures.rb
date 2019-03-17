@@ -11,7 +11,17 @@ class ArsenalfcResults::Fixtures
     @fixture[:teams] = teams
     @fixture[:score] = score
     @fixture[:competition] = comp_name
+    add_competition
     @@all_fixtures << self
+    binding.pry
+  end
+  
+  def add_competition
+    ArsenalfcResults::Competition.all_comps.each do |c|
+      if @fixture[:competition] == c.name
+         @fixture[:competition] = c
+      end
+    end
   end
   
   def self.fixtures

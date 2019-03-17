@@ -15,7 +15,6 @@ class ArsenalfcResults::Competition
     @name = comp_name
     if !@@all_comps.include?(self)
          @@all_comps << self
-         binding.pry
     end
      self.fixture_split
   end
@@ -23,13 +22,15 @@ class ArsenalfcResults::Competition
   def fixture_split
     ArsenalfcResults::Fixtures.fixtures.each do |f|
       if self.name == "Premier League"
-        binding.pry
         @@prem << f
       elsif self.name == "Football League Trophy"
         @@league_trophy << f
-      binding.pry
       end
     end
+  end
+  
+  def add_fixtures(fixture)
+    
   end
   
   def season
