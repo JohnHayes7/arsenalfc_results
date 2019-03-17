@@ -14,6 +14,7 @@ class ArsenalfcResults::Fixtures
     add_competition
     @@all_fixtures << self
     add_to_competition(self)
+    binding.pry
   end
   
   def add_competition
@@ -27,7 +28,9 @@ class ArsenalfcResults::Fixtures
   
   def add_to_competition(fixture)
     ArsenalfcResults::Competition.all_comps.each do |c|
-      binding.pry
+      if @fixture[:competition] == c.name
+        c.fixtures << fixture
+      end
     end
   end
   

@@ -1,7 +1,7 @@
 
 class ArsenalfcResults::Competition
   
-  attr_accessor :name, :fixture
+  attr_accessor :name, :fixtures
   
   @@all_comps = []
   
