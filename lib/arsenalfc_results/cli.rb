@@ -16,6 +16,7 @@ class ArsenalfcResults::CLI
     
     if input == "1"
       puts "Here are the results from the Premier League"
+      ArsenalfcResults::Competition.all_comps
       
     elsif input =="2"
       puts "Here are the results from the Football League Trophy"
