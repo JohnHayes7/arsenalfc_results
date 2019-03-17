@@ -8,7 +8,6 @@ class ArsenalfcResults::Seasons
     @years = years
     @@all_seasons << self
     @competitions = ArsenalfcResults::Competition.all_comps
-    binding.pry
   end
   
   def self.all_seasons
@@ -17,9 +16,5 @@ class ArsenalfcResults::Seasons
   
   def competitions
     @competitions
-  end
-  
-  def add_competition
-    
   end
 end
