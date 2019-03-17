@@ -11,8 +11,8 @@ class ArsenalfcResults::CLI
   
   def menu
     puts "Please select a competition:"
-    ArsenalfcResults::Competition.comp_names.each_with_index do |c, i|
-        puts "#{i+1}. #{c}"
+    ArsenalfcResults::Competition.all_comps.each_with_index do |c, i|
+        puts "#{i+1}. #{c.name}"
     end
     
     input = gets.strip.downcase
