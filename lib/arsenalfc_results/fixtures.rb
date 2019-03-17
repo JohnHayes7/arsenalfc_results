@@ -29,7 +29,6 @@ class ArsenalfcResults::Fixtures
     ArsenalfcResults::Competition.all_comps.each do |c|
       if @fixture[:competition].name == c.name
         c.fixtures << fixture
-        binding.pry
       end
     end
   end

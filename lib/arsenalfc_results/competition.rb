@@ -8,9 +8,7 @@ class ArsenalfcResults::Competition
   def initialize(comp_name)
    @fixtures = []
     @name = comp_name
-    if !@@all_comps.include?(self)
-         @@all_comps << self
-    end
+    @@all_comps << self
   end
   
   def season
@@ -20,6 +18,7 @@ class ArsenalfcResults::Competition
   
   def self.all_comps
     @@all_comps
+    binding.pry
   end
   
   

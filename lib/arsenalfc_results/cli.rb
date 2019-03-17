@@ -20,6 +20,11 @@ class ArsenalfcResults::CLI
     
     if input == "1"
       puts "Here are the results from the Premier League"
+        ArsenalfcResults::Competition.all_comps.each_with_index do |f, i|
+          if f.name == "Premier League"
+            
+          end
+        end
       
       
       
