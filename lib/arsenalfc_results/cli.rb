@@ -1,8 +1,6 @@
 
 class ArsenalfcResults::CLI
   
-  @@comp_names = []
-  
   def greeting
     puts "Welcome to Arsenal FC Results"
     ArsenalfcResults::Scraper.competition_scraper
@@ -76,11 +74,11 @@ class ArsenalfcResults::CLI
       
     elsif input == "exit"
       puts "Thanks for Visiting!  COYG!!!"
-      
     else
       menu
     end
   end
+  
   
   def next_step
     puts "Why you like to see more results? Enter Y or N"

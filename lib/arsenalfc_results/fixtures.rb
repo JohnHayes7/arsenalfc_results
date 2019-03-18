@@ -37,9 +37,4 @@ class ArsenalfcResults::Fixtures
     @@all_fixtures
   end
   
-    
-  
-  
-  
-  
 end
