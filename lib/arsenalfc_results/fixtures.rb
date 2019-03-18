@@ -1,7 +1,7 @@
 
 class ArsenalfcResults::Fixtures
   
-  attr_accessor :season, :competition, :date, :teams, :score
+  attr_accessor :season, :competition, :date, :teams, :score, :fixture
   
   @@all_fixtures = []
   

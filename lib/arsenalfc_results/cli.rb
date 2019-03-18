@@ -20,9 +20,11 @@ class ArsenalfcResults::CLI
     
     if input == "1"
       puts "Here are the results from the Premier League"
-        ArsenalfcResults::Competition.all_comps.each_with_index do |f, i|
+        ArsenalfcResults::Competition.all_comps.each do |f|
           if f.name == "Premier League"
-            
+            f.fixtures.each do |k|
+              puts "#{k.fixture[:date]} - #{k.fixture[:teams]} - #{k.fixture[:score]} "
+            end
           end
         end
       

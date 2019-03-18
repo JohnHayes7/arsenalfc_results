@@ -1,7 +1,7 @@
 
 class ArsenalfcResults::Competition
   
-  attr_accessor :name, :fixtures
+  attr_accessor :name, :fixtures, :fixture
   
   @@all_comps = []
   
@@ -18,7 +18,6 @@ class ArsenalfcResults::Competition
   
   def self.all_comps
     @@all_comps
-    binding.pry
   end
   
   
