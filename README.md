@@ -1,6 +1,6 @@
 # ArsenalfcResults
 
-Welcome to the unofficial Arsenal FC results gem.  In this gem you will be able to find results of Arsenal FC by competition or opponent.
+Welcome to the unofficial Arsenal FC results gem.  In this gem you will be able to find results of Arsenal FC by competition.
 
 ## Installation
 
@@ -20,11 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-To use this app, you will be first asked to select a season for which you want the results.  
-
-Your second step will be enter or select the competition you seek for results.
-
-You will then be asked to choose an opponent if you seek results against a particular opponent. You will also be able to select "all" to see all the results of that competition.
+To use this gem you will be asked to select a competition, from Arsenal FC's current season, for which you would like to see the results.  Once you review the results of your selected competition, you will be asked if you want to see other compeitions from the current season, or you may exit.
 
 ## Development
 
