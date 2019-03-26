@@ -1,5 +1,5 @@
 
-class ArsenalfcResults::Fixtures
+class ArsenalfcResults::Fixture
   
   attr_accessor :season, :competition, :date, :teams, :score
   
@@ -15,7 +15,7 @@ class ArsenalfcResults::Fixtures
   end
   
   def add_competition
-    ArsenalfcResults::Competition.all_comps.each do |c|
+    ArsenalfcResults::Competition.all.each do |c|
       if @competition == c.name
          @competition = c
       end
@@ -24,7 +24,7 @@ class ArsenalfcResults::Fixtures
   
   
   def add_to_competition(fixture)
-    ArsenalfcResults::Competition.all_comps.each do |c|
+    ArsenalfcResults::Competition.all.each do |c|
       if @competition == c.name
         c.fixtures << self
       end

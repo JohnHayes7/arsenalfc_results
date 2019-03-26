@@ -62,7 +62,7 @@ class ArsenalfcResults::Scraper
      fixtures = date_array.zip(teams_array, score_array, comp_array)
     
      fixtures.each do |f|
-        ArsenalfcResults::Fixtures.new("#{f[0]}", "#{f[1]}", "#{f[2]}", "#{f[3]}")
+        ArsenalfcResults::Fixture.new("#{f[0]}", "#{f[1]}", "#{f[2]}", "#{f[3]}")
     end
   end
   
