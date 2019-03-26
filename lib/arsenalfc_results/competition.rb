@@ -15,13 +15,12 @@ class ArsenalfcResults::Competition
     @season
   end
   
-  
   def self.all_comps
     @@all_comps
-  end
+  end 
   
-  
+  def self.find_by_name(name)
     
-  
+  end
   
 end

@@ -5,6 +5,7 @@ class ArsenalfcResults::CLI
     puts "Welcome to Arsenal FC Results"
     ArsenalfcResults::Scraper.competition_scraper
     ArsenalfcResults::Scraper.fixture_scraper
+    binding.pry
     menu
   end
   
@@ -21,7 +22,7 @@ class ArsenalfcResults::CLI
         ArsenalfcResults::Competition.all_comps.each do |f|
           if f.name == "Premier League"
             f.fixtures.each do |k|
-              puts "#{k.fixture[:date]} - #{k.fixture[:teams]} - #{k.fixture[:score]} "
+              puts "#{k.date} - #{k.teams} - #{k.score}"
             end
           end
         end
@@ -33,7 +34,7 @@ class ArsenalfcResults::CLI
         ArsenalfcResults::Competition.all_comps.each do |f|
           if f.name == "Football League Trophy"
             f.fixtures.each do |k|
-              puts "#{k.fixture[:date]} - #{k.fixture[:teams]} - #{k.fixture[:score]} "
+              puts "#{k.date]} - #{k.teams]} - #{k.score} "
             end
           end
         end
@@ -44,7 +45,7 @@ class ArsenalfcResults::CLI
         ArsenalfcResults::Competition.all_comps.each do |f|
           if f.name == "UEFA Europa League"
             f.fixtures.each do |k|
-              puts "#{k.fixture[:date]} - #{k.fixture[:teams]} - #{k.fixture[:score]} "
+              puts "#{k.date} - #{k.teams} - #{k.score} "
             end
           end
         end
@@ -66,7 +67,7 @@ class ArsenalfcResults::CLI
         ArsenalfcResults::Competition.all_comps.each do |f|
           if f.name == "FA Cup"
             f.fixtures.each do |k|
-              puts "#{k.fixture[:date]} - #{k.fixture[:teams]} - #{k.fixture[:score]} "
+              puts "#{k.date} - #{k.teams} - #{k.score} "
             end
           end
         end

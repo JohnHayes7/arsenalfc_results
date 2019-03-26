@@ -1,16 +1,14 @@
 
 class ArsenalfcResults::Fixtures
   
-  attr_accessor :season, :competition, :date, :teams, :score, :fixture
+  attr_accessor :season, :competition, :date, :teams, :score
   
   @@all_fixtures = []
   
   def initialize(date, teams, score, comp_name)
-    @fixture ={}
-    @fixture[:date] = date
-    @fixture[:teams] = teams
-    @fixture[:score] = score
-    @fixture[:competition] = comp_name
+    @date = date
+    @teams = teams
+    @score = score
     add_competition
     @@all_fixtures << self
     add_to_competition(self)
@@ -18,8 +16,8 @@ class ArsenalfcResults::Fixtures
   
   def add_competition
     ArsenalfcResults::Competition.all_comps.each do |c|
-      if @fixture[:competition] == c.name
-         @fixture[:competition] = c
+      if @competition == c.name
+         @competition = c
       end
     end
   end
@@ -27,8 +25,8 @@ class ArsenalfcResults::Fixtures
   
   def add_to_competition(fixture)
     ArsenalfcResults::Competition.all_comps.each do |c|
-      if @fixture[:competition].name == c.name
-        c.fixtures << fixture
+      if @competition == c.name
+        c.fixtures << self
       end
     end
   end
