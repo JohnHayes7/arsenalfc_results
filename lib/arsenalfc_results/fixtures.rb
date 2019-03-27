@@ -3,7 +3,7 @@ class ArsenalfcResults::Fixture
   
   attr_accessor :season, :competition, :date, :teams, :score
   
-  @@all_fixtures = []
+  @@all = []
   
   def initialize(date, teams, score, comp_name)
     @date = date
@@ -12,7 +12,7 @@ class ArsenalfcResults::Fixture
     @competition = comp_name
     add_competition
     add_to_competition(self)
-    @@all_fixtures << self
+    @@all << self
   end
   
   def add_competition
@@ -28,13 +28,13 @@ class ArsenalfcResults::Fixture
     ArsenalfcResults::Competition.all.each do |c|
       if @competition == c.name
         c.fixtures << self
+        binding.pry
       end
     end
   end
   
-  def self.all_fixtures
-    @@all_fixtures
-    binding.pry
+  def self.all
+    @@all
   end
   
 end

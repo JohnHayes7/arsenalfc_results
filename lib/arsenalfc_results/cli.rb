@@ -3,8 +3,8 @@ class ArsenalfcResults::CLI
   
   def greeting
     puts "Welcome to Arsenal FC Results"
-    ArsenalfcResults::Scraper.competition_scraper
     ArsenalfcResults::Scraper.fixture_scraper
+    ArsenalfcResults::Scraper.competition_scraper
     menu
   end
   
@@ -81,7 +81,7 @@ class ArsenalfcResults::CLI
   
   
   def next_step
-    puts "Why you like to see more results? Enter Y or N"
+    puts "Would you like to see more results? Enter Y or N"
     input = gets.strip.downcase
     if input == "y"
       menu
@@ -94,10 +94,17 @@ class ArsenalfcResults::CLI
   
   def comp_display
     input = gets.strip.downcase
-    comp = ArsenalfcResults::Competition.find_by_name(input)
-    puts "Here are the results from the #{comp.name}"
+    if input.to_i.between?(1, 5)
+      comp = ArsenalfcResults::Competition.find_by_name(input)
+      puts "Here are the results from the #{comp.name}"
+      next_step
+    elsif input == "exit"
+    puts "Thanks for visiting!!  COYG!!!"
     
-    next_step
+    else
+    puts "Please make a valid selection"
+    menu
+    end
   end
   
 end
