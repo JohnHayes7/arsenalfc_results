@@ -3,8 +3,8 @@ class ArsenalfcResults::CLI
   
   def greeting
     puts "Welcome to Arsenal FC Results"
-    ArsenalfcResults::Scraper.fixture_scraper
     ArsenalfcResults::Scraper.competition_scraper
+    ArsenalfcResults::Scraper.fixture_scraper
     menu
   end
   
@@ -97,7 +97,10 @@ class ArsenalfcResults::CLI
     if input.to_i.between?(1, 5)
       comp = ArsenalfcResults::Competition.find_by_name(input)
       puts "Here are the results from the #{comp.name}"
+      puts ""
+      binding.pry
       next_step
+      
     elsif input == "exit"
     puts "Thanks for visiting!!  COYG!!!"
     
