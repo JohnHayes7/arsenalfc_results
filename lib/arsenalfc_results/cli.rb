@@ -97,8 +97,9 @@ class ArsenalfcResults::CLI
     if input.to_i.between?(1, 5)
       comp = ArsenalfcResults::Competition.find_by_name(input)
       puts "Here are the results from the #{comp.name}"
-      puts ""
-      binding.pry
+        comp.fixtures.each do |f|
+        puts "#{f.date} - #{f.teams} - #{f.score}"
+        end
       next_step
       
     elsif input == "exit"
