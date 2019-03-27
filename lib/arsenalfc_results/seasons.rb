@@ -1,5 +1,5 @@
 
-class ArsenalfcResults::Seasons
+class ArsenalfcResults::Season
   attr_accessor :years, :competitions
   
   @@all_seasons = []
