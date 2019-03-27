@@ -13,12 +13,8 @@ class ArsenalfcResults::CLI
     ArsenalfcResults::Competition.all.each_with_index do |c, i|
         puts "#{i+1}. #{c.name}"
     end
-    
-    input = gets.strip.downcase
-    comp = ArsenalfcResults::Competition.find_by_name(input)
-    binding.pry
-    
-    puts "Here are the results from the #{comp.name}"
+    comp_display
+   
     
     # if input == "1"
     #   puts "Here are the results from the Premier League"
@@ -96,5 +92,12 @@ class ArsenalfcResults::CLI
     end
   end
   
+  def comp_display
+    input = gets.strip.downcase
+    comp = ArsenalfcResults::Competition.find_by_name(input)
+    puts "Here are the results from the #{comp.name}"
+    
+    next_step
+  end
   
 end

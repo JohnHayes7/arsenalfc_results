@@ -9,9 +9,10 @@ class ArsenalfcResults::Fixture
     @date = date
     @teams = teams
     @score = score
+    @competition = comp_name
     add_competition
-    @@all_fixtures << self
     add_to_competition(self)
+    @@all_fixtures << self
   end
   
   def add_competition
@@ -33,6 +34,7 @@ class ArsenalfcResults::Fixture
   
   def self.all_fixtures
     @@all_fixtures
+    binding.pry
   end
   
 end
