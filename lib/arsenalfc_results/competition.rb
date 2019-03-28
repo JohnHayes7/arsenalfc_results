@@ -19,9 +19,13 @@ class ArsenalfcResults::Competition
     @@all_comps
   end 
   
-  def self.find_by_name(input)
+  def self.find_by_index(input)
     i = input.to_i - 1 
     self.all[i]
+  end
+  
+  def self.find_by_name(comp_name)
+    all.detect{|c| c.name == comp_name}
   end
   
 end

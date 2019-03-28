@@ -1,4 +1,4 @@
-
+ex
 class ArsenalfcResults::CLI
   
   def greeting
@@ -19,7 +19,7 @@ class ArsenalfcResults::CLI
   def comp_display
     input = gets.strip.downcase
     if input.to_i.between?(1, 5)
-      comp = ArsenalfcResults::Competition.find_by_name(input)
+      comp = ArsenalfcResults::Competition.find_by_index(input)
       puts "Here are the results from the #{comp.name}"
         comp.fixtures.each do |f|
         puts "#{f.date} - #{f.teams} - #{f.score}"

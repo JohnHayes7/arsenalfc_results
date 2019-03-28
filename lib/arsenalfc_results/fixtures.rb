@@ -9,28 +9,14 @@ class ArsenalfcResults::Fixture
     @date = date
     @teams = teams
     @score = score
-    @competition = add_competition(comp_name)
-    add_to_competition(self)
+    set_competition(comp_name)
     @@all << self
   end
   
-  def add_competition(comp_name)
-    competition = nil
-    ArsenalfcResults::Competition.all.each do |c|
-      if comp_name == c.name
-         competition = c
-      end
-    end
-    return competition
-  end
   
-  
-  def add_to_competition(fixture)
-    ArsenalfcResults::Competition.all.each do |c|
-      if @competition.name == c.name
-        c.fixtures << self
-      end
-    end
+  def set_competition(comp_name)
+    @competition = ArsenalfcResults::Competition.find_by_name(comp_name)
+    @competition.fixtures << self
   end
   
   def self.all
