@@ -1,4 +1,4 @@
-ex
+
 class ArsenalfcResults::CLI
   
   def greeting
